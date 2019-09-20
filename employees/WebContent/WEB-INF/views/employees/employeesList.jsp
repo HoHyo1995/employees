@@ -18,9 +18,10 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <body>
+<div class="container">
 	<h1>사원목록</h1>
 	<form method = "get" action="${pageContext.request.contextPath}/employees/getEmployeesList">
-	<select name="limit">
+	<select name="limit" class="custom-select">
 		<option value="10">10</option>
 		<option value="20">20</option>
 		<option value="30">30</option>
@@ -28,9 +29,9 @@
 		<option value="50">50</option>
 	</select>
 	<label>개씩보기</label>
-	<button type="submit">사원목록</button>
+	<button type="submit" class="btn btn-info">사원목록</button>
 	</form>
-	<table>
+	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>사원번호</th>
@@ -43,7 +44,7 @@
 		</thead>
 		<tbody>
 			<c:forEach var="employees" items="${list}">
-				<tr>
+				<tr class="table-primary">
 					<td>${employees.empNo}</td>
 					<td>${employees.birthDate}</td>
 					<td>${employees.firstName}</td>
@@ -55,6 +56,6 @@
 		</tbody>
 	</table>
 	
-
+<div class="container">
 </body>
 </html>

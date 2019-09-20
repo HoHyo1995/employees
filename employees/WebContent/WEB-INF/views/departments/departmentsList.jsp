@@ -18,11 +18,12 @@
 <title>부서 목록</title>
 </head>
 <body>
+<div class="container">
 	<h1>부서 목록</h1>
 	<!--  List<Departments> list = (List<Departments>)request.getAttribute("list");
 		${list}  -->
 <!-- 출력하자 -->
-	<table>
+	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>부서번호</th>
@@ -31,12 +32,13 @@
 		</thead>
 		<tbody>
 			<c:forEach var="departments" items="${list }">
-				<tr>
+				<tr class="table-primary">
 					<td>${departments.deptNo }</td>
 					<td>${departments.deptName }</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+</div>
 </body>
 </html>

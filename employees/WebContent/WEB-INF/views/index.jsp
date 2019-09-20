@@ -18,18 +18,19 @@
 <title>Index.jsp</title>
 </head>
 <body>
-	<h1>Index</h1>
+<div class="container">
+	<h1 class="text-primary">Index</h1>
 	
 	<!--  WEB APP 네비게이션 -->
 	<div>
-		<ul>
-		<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></li>
-		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a></li>
+		<ul class="list-group">
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a></li>
 		</ul>
 	</div>
 	<div>
-	
 		employees table total row count : ${employeesRowCount} 
 	</div>
+</div>
 </body>
 </html>
