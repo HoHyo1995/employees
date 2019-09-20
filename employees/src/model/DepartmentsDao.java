@@ -1,12 +1,19 @@
 package model;
-import java.util.*;
-import vo.*;
-import java.sql.*;
-public class departmentsDao {
-	// 생성자 생성
-	public departmentsDao() {
-		
-	}
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import vo.Departments;
+
+public class DepartmentsDao {
+	//생성자 생성
+	public DepartmentsDao() {
+	 
+ }
 	// 부서들의 이름과 부서번호를 리스트로 출력하는 메소드
 	public List<Departments> selectDepartmentsList() {
 		// Departments타입을 여러개 받기 위해 List<>배열 생성한다.
@@ -46,5 +53,4 @@ public class departmentsDao {
 		
 		return list;
 	}
-
 }
