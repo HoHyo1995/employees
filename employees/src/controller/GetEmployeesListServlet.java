@@ -18,7 +18,7 @@ public class GetEmployeesListServlet extends HttpServlet {
 		int limit = 10;
 		// 한번에 출력할 갯수를 웹에서 정할 수 있게 하기위해서 사용 select태그 사용후 request로 받아올 예정
 		if(request.getParameter("limit") != null) {
-			Integer.parseInt(request.getParameter("limit"));
+			limit = Integer.parseInt(request.getParameter("limit"));
 		}
 		// EmployeesDao에있는 ,...list메소드를 사용하기위해 객체를 선언한다
 		 employeesDao = new EmployeesDao();
