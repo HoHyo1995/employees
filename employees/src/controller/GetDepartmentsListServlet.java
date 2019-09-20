@@ -15,8 +15,13 @@ public class GetDepartmentsListServlet extends HttpServlet {
 	private List<Departments> list;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// DepratmentsDao에 있는 메소드를 사용하기 위해 객체선언
-		DepartmentsDao departmentDao = new DepartmentsDao();
-		list = 
+		DepartmentsDao departmentsDao = new DepartmentsDao();
+		// 메소드에 리턴되는값이 List타입이므로 new 연산자를 굳이 사용해서 list변수에 List를 생성할 필요는 없다.,
+		list = departmentsDao.selectDepartmentsList();
 		
+		//Attribute메소드를 사용해서 list값을 리퀘스트에 넣어준다.
+		request.setAttribute("list", list);
+		//포워드 ㄱㄱ
+		request.getRequestDispatcher("/WEB-INF/views/departments/departmentsList.jsp").forward(request, response);
 	}
 }
