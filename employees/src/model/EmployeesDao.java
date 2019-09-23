@@ -20,9 +20,9 @@ public class EmployeesDao {
 		// 쿼리문이 오름차순이냐 내림차순이냐에 따라 바뀌므로 동적쿼리를 사용하엿따.
 		String sql = null;
 		if(order.equals("asc")) {
-			sql = "select emp_no, birth_date, first_name, last_name, gender, hire_date from employees order by first_name asc limit=50";
+			sql = "select emp_no, birth_date, first_name, last_name, gender, hire_date from employees order by first_name asc limit 50";
 		} else if(order.equals("desc")) {
-			sql = "select emp_no, birth_date, first_name, last_name, gender, hire_date from employees order by first_name desc limit=50";
+			sql = "select emp_no, birth_date, first_name, last_name, gender, hire_date from employees order by first_name desc limit 50";
 		}
 		
 		// 예외구문을 사용하여 DB에 값을 set메소드를 사용하여 복사
