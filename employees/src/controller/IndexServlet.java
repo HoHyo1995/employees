@@ -29,17 +29,23 @@ public class IndexServlet extends HttpServlet {
 		this.titlesDao = new TitlesDao();
 		// 행을 구하는 메소드의 리턴값들을 변수에 복사
 		int employeesRowCount = employeesDao.selectEmployeesCount();
+		System.out.println("employees행"+employeesRowCount);
 		int departmentsRowCount = departmentsDao.selectDepartmentsCount();
-		int deptempRowCount = deptEmpDao.selectEmpDeptCount();
+		System.out.println("departments행"+departmentsRowCount);
+		int deptEmpRowCount = deptEmpDao.selectEmpDeptCount();
+		System.out.println("deptEmp행"+deptEmpRowCount);
 		int deptManagerRowCount = deptManagerDao.selectDeptManagerCount();
+		System.out.println("dpetManager행"+deptManagerRowCount);
 		int salariesRowCount = salariesDao.selectSalariesCount();
+		System.out.println("salaries행"+salariesRowCount);
 		int titlesRowCount = titlesDao.selectTitlesCount();
+		System.out.println("titles행"+titlesRowCount);
 		
 		// employeesRowCount를 request에 담는다
 		// request에 각 변수들을 담는다
 		request.setAttribute("employeesRowCount", employeesRowCount);
 		request.setAttribute("departmentsRowCount", departmentsRowCount);
-		request.setAttribute("deptempRowCount", deptempRowCount);
+		request.setAttribute("deptEmpRowCount", deptEmpRowCount);
 		request.setAttribute("deptManagerRowCount", deptManagerRowCount);
 		request.setAttribute("salariesRowCount", salariesRowCount);
 		request.setAttribute("titlesRowCount", titlesRowCount);
