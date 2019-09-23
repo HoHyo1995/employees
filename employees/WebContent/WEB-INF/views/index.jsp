@@ -21,6 +21,42 @@
 <div class="container">
 	<h1 class="text-primary">Index</h1>
 	
+	<h2>테이블 정보</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>테이블 이름</th>
+				<th>전체 행의 수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>departments</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>employees</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>emp_manager</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>emp_dept</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>titles</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>salaries</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	
 	<!--  WEB APP 네비게이션 -->
 	<div>
 		<ul class="list-group">
