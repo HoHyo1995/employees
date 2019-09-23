@@ -16,13 +16,37 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Index.jsp</title>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 </head>
 <body>
 <div class="container">
 	<h1 class="text-primary">Index</h1>
 	
-	<h2>테이블 정보</h2>
-	<table>
+	<h2 style="border:2px solid Tomato;color:Tomato;">테이블 정보</h2>
+	<table id="customers">
 		<thead>
 			<tr>
 				<th>테이블 이름</th>
@@ -56,7 +80,6 @@
 			</tr>
 		</tbody>
 	</table>
-	
 	<!--  WEB APP 네비게이션 -->
 	<div>
 		<ul class="list-group">
