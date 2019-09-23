@@ -32,27 +32,27 @@
 		<tbody>
 			<tr>
 				<td>departments</td>
-				<td></td>
+				<td>${departmentsRowCount }</td>
 			</tr>
 			<tr>
 				<td>employees</td>
-				<td></td>
+				<td>${employeesRowCount}</td>
 			</tr>
 			<tr>
-				<td>emp_manager</td>
-				<td></td>
+				<td>dept_manager</td>
+				<td>${deptManagerRowCount }</td>
 			</tr>
 			<tr>
-				<td>emp_dept</td>
-				<td></td>
+				<td>dept_emp</td>
+				<td>${deptEmpRowCount }</td>
 			</tr>
 			<tr>
 				<td>titles</td>
-				<td></td>
+				<td>${titlesRowCount }</td>
 			</tr>
 			<tr>
 				<td>salaries</td>
-				<td></td>
+				<td>${salariesRowCount }</td>
 			</tr>
 		</tbody>
 	</table>
