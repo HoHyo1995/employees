@@ -61,7 +61,11 @@
 	<div>
 		<ul class="list-group">
 		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a></li>
+		<li class="list-group-item">
+		<a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a>
+		<a href="${pageContext.request.contextPath}"/employees/getEmployeesListOrderBy?order=asc">오름차순50</a>
+		<a href="${pageContext.request.contextPath}"/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
+		</li>
 		</ul>
 	</div>
 	<div>
