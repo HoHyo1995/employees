@@ -32,7 +32,7 @@ public class IndexServlet extends HttpServlet {
 		System.out.println("employees행"+employeesRowCount);
 		int departmentsRowCount = departmentsDao.selectDepartmentsCount();
 		System.out.println("departments행"+departmentsRowCount);
-		int deptEmpRowCount = deptEmpDao.selectEmpDeptCount();
+		int deptEmpRowCount = deptEmpDao.selectDeptEmpCount();
 		System.out.println("deptEmp행"+deptEmpRowCount);
 		int deptManagerRowCount = deptManagerDao.selectDeptManagerCount();
 		System.out.println("dpetManager행"+deptManagerRowCount);
