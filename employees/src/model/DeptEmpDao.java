@@ -15,9 +15,9 @@ public class DeptEmpDao {
 		
 	}
 	// 사원별로 해당 부서를 나타내는 테이블의 행의 수 구하는 메소드
-				public int selectEmpDeptCount() {
+				public int selectDeptEmpCount() {
 					int count = 0;
-					final String sql = "select count(*) from emp_dept";
+					final String sql = "select count(*) from dept_emp";
 					Connection conn = null;
 					PreparedStatement stmt = null;
 					ResultSet rs = null;
@@ -44,6 +44,7 @@ public class DeptEmpDao {
 							e.printStackTrace();
 						}
 					}
+					
 					return count;
 				}
 			
