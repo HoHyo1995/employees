@@ -92,7 +92,15 @@
 		<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복제거)</a></li>
 		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
 		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
+		<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">현재 부서별 사원수</a></li>
 		</ul>
+	</div>
+	<div>
+		<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
+			<input type="number" name="begin">~<input type = "number" name="end">
+			<button type="submit">사원 목록 between..and..</button>
+			<label>${minEmpNo}~${maxEmpNo}</label>
+		</form>
 	</div>
 </div>
 </body>
