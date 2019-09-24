@@ -93,9 +93,6 @@
 		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
 		</ul>
 	</div>
-	<div>
-		employees table total row count : ${employeesRowCount} 
-	</div>
 </div>
 </body>
 </html>
