@@ -10,6 +10,34 @@ public class EmployeesDao {
 	public EmployeesDao(){
 		
 	}
+	//
+	public List<Map<String, Object>> selectEmployeesCountGroupByGender() {
+		// 동적배열 생성
+		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		// 마리아 DB로딩 변수 선언 및 초기화
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		// STring타입의 쿼리문 생성
+		String sql = "select gender, count(gender) from employees group by gender";
+		// 마리아DB에서 데이터를 불러와 변수에 저장
+		try {
+			conn = DBHelper.getConnection();
+			stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery();
+			while(rs.next()) {
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("gen", rs.getString("gender"));
+				map.put("genCnt", rs.getString("count(gender)"));
+				list.add(map);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBHelper.close(rs, stmt, conn);
+		}
+		return list;
+	}
 	// 전체 리스트를 출력하는 메소드인데 오름차순 내림차순이 있음 50개씩 보여주는 메소드
 	public List<Employees> selectEmployeesOrderBy(String order) {
 		System.out.println("EmployeesDao.java에 selectEMployeesList에 인수로 사용된 order의 값은"+order);
