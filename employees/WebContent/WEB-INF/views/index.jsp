@@ -91,6 +91,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복제거)</a></li>
 		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
+		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
 		</ul>
 	</div>
 </div>
