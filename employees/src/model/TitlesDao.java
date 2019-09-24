@@ -22,7 +22,7 @@ public class TitlesDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		// 쿼리문을 String타입으로 변수 선언한다
-		String sql = "select distinct title from titles";
+		String sql = "select distinct(title) from titles";
 		// getConnection메소드를 불러온후 마리아DB에값을 저장한다.
 		try {
 			conn = DBHelper.getConnection();
