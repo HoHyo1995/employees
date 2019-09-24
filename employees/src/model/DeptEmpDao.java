@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import db.DBHelper;
 import vo.Departments;
 
 public class DeptEmpDao {
@@ -23,8 +24,7 @@ public class DeptEmpDao {
 					ResultSet rs = null;
 					
 					try {
-						Class.forName("org.mariadb.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/employees", "root", "java1234");
+						conn = DBHelper.getConnection();
 						stmt = conn.prepareStatement(sql);
 						rs = stmt.executeQuery();
 						if(rs.next()) {
@@ -35,14 +35,7 @@ public class DeptEmpDao {
 					}catch(Exception e) { // e라는 변수가  2개인 이유는 자바의 변수 생명주기는 {}
 						e.printStackTrace();
 					} finally {
-						try {
-							rs.close();
-							stmt.close();
-							conn.close();
-						}catch(Exception e) {
-							// 예외가 나면 콘솔창에 출력을 하는 메소드
-							e.printStackTrace();
-						}
+						DBHelper.close(rs, stmt, conn);
 					}
 					
 					return count;
@@ -60,8 +53,7 @@ public class DeptEmpDao {
 				final String sql = "select dept_no, dept_name from departments";
 				//예외처리문을 사용하여 실행시킨다
 				try {
-					Class.forName("org.mariadb.jdbc.Driver");
-					conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/employees", "root", "java1234");
+					conn = DBHelper.getConnection();
 					stmt = conn.prepareStatement(sql);
 					rs = stmt.executeQuery();
 					while(rs.next()) {
@@ -74,15 +66,7 @@ public class DeptEmpDao {
 					// 예외발생시 콘솔창에 출력해주는 메소드
 					e.printStackTrace();
 				} finally {
-					try {
-						rs.close();
-						stmt.close();
-						conn.close();
-					}
-					catch(Exception e) {
-						// 예외발생시 콘솔창에 출력해주는 메소드
-						e.printStackTrace();
-					}
+					DBHelper.close(rs, stmt, conn);
 				}
 				
 				return list;
