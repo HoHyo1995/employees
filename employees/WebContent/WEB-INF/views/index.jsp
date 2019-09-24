@@ -90,6 +90,7 @@
 		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복제거)</a></li>
+		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
 		</ul>
 	</div>
 	<div>
