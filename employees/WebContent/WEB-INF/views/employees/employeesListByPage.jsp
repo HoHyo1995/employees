@@ -3,6 +3,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+a:link, a:visited {
+  background-color: #47C83E;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1 {
+  color: green;
+}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -10,7 +46,7 @@
 	<h1>10개씩 페이징한 사원리스트</h1>
 	
 	<!-- 출력 -->
-	<table>
+	<table id="customers">
 		<thead>
 			<tr>
 				<th>사번</th>
@@ -36,11 +72,11 @@
 	</table>
 	<!-- 이전 -->
 		<c:if test="${currentPage > 1 }">
-			<a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage?currentPage=${currentPage-1}">이전</a>
+			<a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage?currentPage=${currentPage-1}" >이전</a>
 		</c:if>
 	<!-- 다음-->
 		<c:if test="${currentPage < lastPage }">
-			<a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage?currentPage=${currentPage+1}">다음</a>
+			<a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage?currentPage=${currentPage+1}" >다음</a>
 		</c:if>
 </body>
 </html>
