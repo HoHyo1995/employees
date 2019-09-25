@@ -4,6 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+h1 {
+  color: green;
+}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 <title>사원 목록</title>
 </head>
 <!-- Latest compiled and minified CSS -->
@@ -31,7 +58,7 @@
 	<label>개씩보기</label>
 	<button type="submit" class="btn btn-info">사원목록</button>
 	</form>
-	<table class="table table-bordered">
+	<table id="customers">
 		<thead>
 			<tr>
 				<th>사원번호</th>
