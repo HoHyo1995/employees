@@ -3,6 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+ol {
+  background: #3399ff;
+  padding: 20px;
+}
+ol li {
+  background: #47C83E;
+  margin: 5px;
+}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
