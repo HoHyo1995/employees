@@ -36,18 +36,22 @@ h1 {
 <body>
 	<h1>부서별 사원수</h1>
 	<table id="customers">
-		<tr>
-			<td>부서번호</td>
-			<td>부서이름</td>
-			<td>부서사원수</td>
-		</tr>
+		<thead>
+			<tr>
+				<th>부서번호</th>
+				<th>부서이름</th>
+				<th>부서사원수</th>
+			</tr>
+		</thead>
+		<tbody>
 		<c:forEach var="deptEmp" items="${list}">
-		<tr>
-			<td>${deptEmp.deptNo }</td>
-			<td>${deptEmp.deptName }</td>
-			<td>${deptEmp.cnt}</td>
-		</tr>
+			<tr>
+				<td>${deptEmp.deptNo }</td>
+				<td>${deptEmp.deptName }</td>
+				<td>${deptEmp.cnt}</td>
+			</tr>
 		</c:forEach>
+		</tbody>
 	</table>
 
 </body>
