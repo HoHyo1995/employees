@@ -93,6 +93,7 @@
 		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
 		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
 		<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">현재 부서별 사원수</a></li>
+		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></li>
 		</ul>
 	</div>
 	<div>
