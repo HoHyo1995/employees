@@ -17,6 +17,22 @@
 <meta charset="UTF-8">
 <title>Index.jsp</title>
 <style>
+input[type=number] {
+  width: 100%;
+  padding: 3px 5px;
+  margin: 3px 0;
+  box-sizing: border-box;
+}
+input[type=submit]{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -89,17 +105,17 @@
 		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순50</a>
 		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복제거)</a></li>
-		<li><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
-		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
-		<li><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">현재 부서별 사원수</a></li>
-		<li><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복제거)</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계값(count, sum, avg, max, min, std)</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">사원 수(성별 group by gender)</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">현재 부서별 사원수</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></li>
 		</ul>
 	</div>
 	<div>
 		<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
 			<input type="number" name="begin">~<input type = "number" name="end">
-			<button type="submit">사원 목록 between..and..</button>
+			<input button type="submit">사원 목록 between..and..</button>
 			<label>${minEmpNo}~${maxEmpNo}</label>
 		</form>
 	</div>
