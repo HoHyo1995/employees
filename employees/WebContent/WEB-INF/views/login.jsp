@@ -19,7 +19,7 @@
 			</div>
 			<div>
 				<label>emp_no :</label>
-				<input type="text" name="emp_no">
+				<input type="text" name="empNo">
 			</div>
 			<button type="submit">로그인</button>
 		</form>
