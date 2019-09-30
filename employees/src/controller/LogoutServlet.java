@@ -16,6 +16,7 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		// 세션을 삭제해주는 메소드
 		session.invalidate();
+		// 로그아웃시 로그인창으로 보내준다
 		response.sendRedirect(request.getContextPath()+"/login");
 	
 	}
