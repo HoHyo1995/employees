@@ -10,6 +10,39 @@ public class EmployeesDao {
 	public EmployeesDao(){
 		
 	}
+	// 로그인 정보가 맞는지 확인하는 메소드
+	public int login(Employees employees) {
+		// 인수로 넘어 온 값을 확인한다.
+		System.out.println("성 "+employees.getFirstName()+" ,이름 "+employees.getLastName()+" ,사번 "+employees.getEmpNo());
+		// 리턴받을 변수값을 생성 후 초기화 한다
+		int sessionEmpNo = 0;
+		// 마리아 DB로딩에 사용 할 변수들을 선언하고 촉기화한다.
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		// 쿼리문을 스트링타입으로 선언한다 (select로 불러와서 인수와 같은 값이 있을 경우 리턴으로 sessionEmpNo를 넘겨주고 없을경우 다시 로그인창으로 리턴시킨다.)
+		String sql = "select emp_no, first_name, last_name from employees where emp_no=? and first_name=? and last_name=?";
+		// 마리아DB 로딩 및 연결
+		try {
+			conn = DBHelper.getConnection();
+			stmt = conn.prepareStatement(sql);
+			// 인수와 같은 값을 넣어줘서 동일한 정보가 있는지 확인한다
+			stmt.setInt(1, employees.getEmpNo());
+			stmt.setString(2, employees.getFirstName());
+			stmt.setString(3, employees.getLastName());
+			rs = stmt.executeQuery();
+			if(rs.next()) {
+				sessionEmpNo = rs.getInt("emp_no");
+				rs.getString("first_name");
+				rs.getString("last_name");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBHelper.close(rs, stmt, conn);
+		}
+		return sessionEmpNo;
+	}
 	// 마지막페이지를 구하는 메소드
 	public int selectLastPage(int rowPerPage) {
 		// rowPerPage가 넘어오는지 확인한다.
