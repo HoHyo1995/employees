@@ -62,7 +62,7 @@ input[type=submit]{
 	<h1 class="text-primary">Index</h1>
 	<!-- 로그인시 로그아웃뜨게하기 -->
 	<c:if test="${sessionEmpNo != null }">
-		<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+		<a href="${pageContext.request.contextPath}/LogoutServlet">로그아웃</a>
 	</c:if> 
 	<h2 style="border:2px solid Tomato;color:Tomato;">테이블 정보</h2>
 	<table id="customers">
