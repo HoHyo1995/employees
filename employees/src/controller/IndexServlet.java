@@ -21,7 +21,7 @@ public class IndexServlet extends HttpServlet {
 	private SalariesDao salariesDao;
 	private TitlesDao titlesDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 로그인 
+		// 로그인 확인
 		HttpSession session = request.getSession();
 		if(session.getAttribute("sessionEmpNo") == null) {
 			response.sendRedirect(request.getContextPath()+"/login");
