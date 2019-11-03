@@ -20,7 +20,7 @@ public class DeptEmpDao {
 	// 사원 정보를 나타내는 메소드
 	public List<DeptEmp> getDeptEmpList(int currentPage, int rowPerPage){
 		// 넘어 온 인수를 확인한다
-		System.out.println("현재페이지 : "+currentPage+"페이지당 행의 수 : "+rowPerPage);
+		System.out.println("현재페이지 : "+currentPage+" 페이지당 행의 수 : "+rowPerPage);
 		// 시작값을 정한다
 		int startRow = (currentPage-1)*rowPerPage;
 		// 리턴받을 값을 변수로 선언한다
