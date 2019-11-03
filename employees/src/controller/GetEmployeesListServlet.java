@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.util.*;
 import vo.*;
 
@@ -14,6 +16,12 @@ import vo.*;
 public class GetEmployeesListServlet extends HttpServlet {
 	private EmployeesDao employeesDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 확인
+		HttpSession session = request.getSession();
+		if(session.getAttribute("sessionEmpNo") == null) {
+			response.sendRedirect(request.getContextPath()+"/login");
+			return ;
+		}
 		// 한번에 출력할 갯수를 정하기 위해 limit이란 변수를 생성
 		int limit = 10;
 		// 한번에 출력할 갯수를 웹에서 정할 수 있게 하기위해서 사용 select태그 사용후 request로 받아올 예정

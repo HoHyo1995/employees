@@ -6,13 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import model.*;
 import java.util.*;
 @WebServlet("/employees/getEmployeesListBetween")
 public class GetEmployeesListBetweenServlet extends HttpServlet {
 	private EmployeesDao employeesDao;
    	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 객체생성
+   		// 로그인 확인
+		HttpSession session = request.getSession();
+		if(session.getAttribute("sessionEmpNo") == null) {
+			response.sendRedirect(request.getContextPath()+"/login");
+			return ;
+		}
+   		// 객체생성
    		employeesDao = new EmployeesDao();
    		// index에서 넘겨준 post방식의 begin, end 값을 변수로 받는다
    		int begin = Integer.parseInt(request.getParameter("begin"));

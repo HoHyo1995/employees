@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import model.*;
 import java.util.*;
 
@@ -14,6 +16,12 @@ public class GetTitlesListDistinctServlet extends HttpServlet {
 	// 객체 변수 선언
 	private TitlesDao titlesDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 확인
+		HttpSession session = request.getSession();
+		if(session.getAttribute("sessionEmpNo") == null) {
+			response.sendRedirect(request.getContextPath()+"/login");
+			return ;
+		}
 		//객체 생성
 		titlesDao = new TitlesDao();
 		// 리턴값을 받기위한 List 변수 생성

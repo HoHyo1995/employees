@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.DeptEmpDao;
 import vo.DeptEmp;
@@ -17,6 +18,12 @@ import vo.DeptEmp;
 public class GetDeptEmpListServlet extends HttpServlet {
 	private DeptEmpDao deptEmpDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 확인
+		HttpSession session = request.getSession();
+		if(session.getAttribute("sessionEmpNo") == null) {
+			response.sendRedirect(request.getContextPath()+"/login");
+			return ;
+		}
 		// 페이징 (기본페이지 1로 지정)
 		int currentPage = 1;
 		if(request.getParameter("currentPage") != null) {
