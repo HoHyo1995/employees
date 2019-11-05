@@ -92,7 +92,7 @@ input[type=submit]{
 		<li class="list-group-item">
 		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
 		</li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">부서목록(중복X)</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복X)</a></li>
 		<li class="list-group-item"><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">업무통계</a></li>
 		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">현재 재직자 수</a></li>
 		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서별 사원 수</a></li>
