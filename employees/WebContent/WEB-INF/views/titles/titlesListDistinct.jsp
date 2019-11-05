@@ -3,25 +3,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
-ol {
-  background: #3399ff;
-  padding: 20px;
-}
-ol li {
-  background: #47C83E;
-  margin: 5px;
-}
+
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 	<h1>업무목록(중복제거)</h1>
-	<ol>
+	<ul class="list-group list-group-flush">
 		<c:forEach var="tit" items="${list}">
-		<li>${tit}</li>
+		<li class="list-group-item">${tit}</li>
 		</c:forEach>
-	</ol>
+	</ul>
+</div>
 </body>
 </html>
