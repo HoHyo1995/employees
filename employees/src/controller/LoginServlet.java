@@ -44,7 +44,8 @@ public class LoginServlet extends HttpServlet {
 		// 세션에 로그인 정보를 넣어준다
 		session.setAttribute("sessionEmpNo", sessionEmpNo);
 		//포워드
-		request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+		response.sendRedirect(request.getContextPath()+"/index");
+		
 	}
 
 }
