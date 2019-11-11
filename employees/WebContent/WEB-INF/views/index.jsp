@@ -138,7 +138,7 @@ input[type=submit]{
 	
 	<div>
 		<br>
-		<label id= "notice">${minEmpNo}~${maxEmpNo}의 값만 입력하세요.</label>
+		<label id= "notice">10001~499999의 값만 입력하세요.</label>
 		<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
 			<span><input type="number" name="begin"></span><span>~</span><span><input type = "number" name="end"></span>
 			<button type="submit" class="btn btn-outline-success">검색</button>
