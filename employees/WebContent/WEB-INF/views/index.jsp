@@ -69,83 +69,93 @@ input[type=submit]{
 </style>
 </head>
 <body>
-<div class="container">
-	<div>
-		<a href="${pageContext.request.contextPath}/index" id = "homebtn">Home</a>
+	<div style="background: #353535">
+		<a href="${pageContext.request.contextPath}/index" id = "homebtn">Employees</a>
 		<!-- 로그인시 로그아웃뜨게하기 -->
 		<c:if test="${sessionEmpNo != null }">
-			<a href="${pageContext.request.contextPath}/LogoutServlet" id="logout">로그아웃</a>
+			<a href="${pageContext.request.contextPath}/LogoutServlet" id="logout" style="padding-top: 20px">로그아웃</a>
 		</c:if>
 	</div> 
-	<h2 style="border:2px solid Tomato;color:Tomato;">테이블 정보</h2>
+<!-- 	<table border="1"> -->
+<!-- 		<tr> -->
+<%-- 			<td><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순50</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복X)</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">급여통계</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">현재 재직자 수</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서별 사원 수</a></td> --%>
+<%-- 			<td><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></td> --%>
+<!-- 		</tr> -->
+<!-- 	</table> -->
 	<!--  WEB APP 네비게이션 -->
 	<div class="row">
-	<div class="col-sm-2">
-		<ul class="list-group">
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></li>
-		<li class="list-group-item">
-		<a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a>
-		</li>
-		<li class="list-group-item">
-		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순50</a>
-		</li>
-		<li class="list-group-item">
-		<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
-		</li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복X)</a></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">급여통계</a></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">현재 재직자 수</a></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서별 사원 수</a></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></li>
-		</ul>
+		<div class="col-sm-2">
+			<ul class="list-group">
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsList">부서목록</a></li>
+			<li class="list-group-item">
+			<a href="${pageContext.request.contextPath}/employees/getEmployeesList">사원목록</a>
+			</li>
+			<li class="list-group-item">
+			<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=asc">오름차순50</a>
+			</li>
+			<li class="list-group-item">
+			<a href="${pageContext.request.contextPath}/employees/getEmployeesListOrderBy?order=desc">내림차순50</a>
+			</li>
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/titles/getTitlesListDistinct">업무목록(중복X)</a></li>
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/salaries/getSalariesStatistics">급여통계</a></li>
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesCountByGender">현재 재직자 수</a></li>
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/departments/getDepartmentsCountByDeptNo">부서별 사원 수</a></li>
+			<li class="list-group-item"><a href="${pageContext.request.contextPath}/employees/getEmployeesListByPage">사원목록페이징(10명씩)</a></li>
+			</ul>
+		</div>
+		<!--  좌우 나눠지는 경계선 -->
+		<div class="col-sm-10">
+		<table id="customers">
+			<thead>
+				<tr>
+					<th>테이블 이름</th>
+					<th>전체 행의 수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>departments</td>
+					<td>${departmentsRowCount}</td>
+				</tr>
+				<tr>
+					<td>employees</td>
+					<td>${employeesRowCount}</td>
+				</tr>
+				<tr>
+					<td>dept_manager</td>
+					<td>${deptManagerRowCount}</td>
+				</tr>
+				<tr>
+					<td>dept_emp</td>
+					<td>${deptEmpRowCount}</td>
+				</tr>
+				<tr>
+					<td>titles</td>
+					<td>${titlesRowCount}</td>
+				</tr>
+				<tr>
+					<td>salaries</td>
+					<td>${salariesRowCount}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div>
+			<br>
+			<label id= "notice">10001~499999의 값만 입력하세요.</label>
+			<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
+				<span><input type="number" name="begin"></span><span>~</span><span><input type = "number" name="end"></span>
+				<button type="submit" class="btn btn-outline-success">검색</button>
+			</form>
+		</div>
+		</div>
 	</div>
-	<!--  좌우 나눠지는 경계선 -->
-	<div class="col-sm-10">
-	<table id="customers">
-		<thead>
-			<tr>
-				<th>테이블 이름</th>
-				<th>전체 행의 수</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>departments</td>
-				<td>${departmentsRowCount}</td>
-			</tr>
-			<tr>
-				<td>employees</td>
-				<td>${employeesRowCount}</td>
-			</tr>
-			<tr>
-				<td>dept_manager</td>
-				<td>${deptManagerRowCount}</td>
-			</tr>
-			<tr>
-				<td>dept_emp</td>
-				<td>${deptEmpRowCount}</td>
-			</tr>
-			<tr>
-				<td>titles</td>
-				<td>${titlesRowCount}</td>
-			</tr>
-			<tr>
-				<td>salaries</td>
-				<td>${salariesRowCount}</td>
-			</tr>
-		</tbody>
-	</table>
-	
-	<div>
-		<br>
-		<label id= "notice">10001~499999의 값만 입력하세요.</label>
-		<form method="post" action="${pageContext.request.contextPath}/employees/getEmployeesListBetween">
-			<span><input type="number" name="begin"></span><span>~</span><span><input type = "number" name="end"></span>
-			<button type="submit" class="btn btn-outline-success">검색</button>
-		</form>
-	</div>
-	</div>
-	</div>
-</div>
 </body>
 </html>
