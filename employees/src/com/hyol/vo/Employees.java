@@ -1,5 +1,7 @@
 package com.hyol.vo;
 
+
+
 public class Employees {
 	// 필드 생성
 	private int empNo;
@@ -7,12 +9,10 @@ public class Employees {
 	private String firstName;
 	private String lastName;
 	private String gender;
-	private String hireDate;	
-	// 생성자 생성
-	public Employees() {
-		
-	}
-	// get, set 메소드 생성
+	private String hireDate;
+	private Titles titles;
+	private Departments departments;
+	
 	public int getEmpNo() {
 		return empNo;
 	}
@@ -49,11 +49,17 @@ public class Employees {
 	public void setHireDate(String hireDate) {
 		this.hireDate = hireDate;
 	}
-	@Override
-	public String toString() {
-		return "Employees [empNo=" + empNo + ", BirthDate=" + BirthDate + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", gender=" + gender + ", hireDate=" + hireDate + "]";
+	public Titles getTitles() {
+		return titles;
+	}
+	public void setTitles(Titles titles) {
+		this.titles = titles;
+	}
+	public Departments getDepartments() {
+		return departments;
+	}
+	public void setDepartments(Departments departments) {
+		this.departments = departments;
 	}
 	
-
 }

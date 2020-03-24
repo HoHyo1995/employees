@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		// 세션에 저장(seno라는 이름으로 저장)
 		HttpSession session = request.getSession();
 		session.setAttribute("seno", sessionEmpNo);
-		request.getRequestDispatcher("/WEB-INF/view/home.jsp").forward(request, response);
+		response.sendRedirect("/employees/home");
 	}
 
 }

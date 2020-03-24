@@ -76,4 +76,9 @@
 	</tr>
 </table>
 </body>
+<script>
+	$("#title").click(function(){
+		location.href="/employees/home"
+	});
+</script>
 </html>

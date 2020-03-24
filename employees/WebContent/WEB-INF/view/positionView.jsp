@@ -26,7 +26,7 @@
 <body>
 <hr>
 <div id="titleBox">
-	<h2 id="title">샘플DB employees로 구현</h2>
+	<h2 id="title">샘플DB employees로 구현-Position</h2>
 </div>
 <hr>
 <div style="text-align: center;">

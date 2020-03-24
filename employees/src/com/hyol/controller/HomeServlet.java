@@ -21,14 +21,13 @@ import com.hyol.model.TitlesDao;
 public class HomeServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("-----HomeServlet-----");
 		// 세션검사(로그인 확인)
 		HttpSession session = request.getSession();
 		if(session.getAttribute("seno") == null) {
 			response.sendRedirect(request.getContextPath()+"/login");
 			return;
 		}
-		
 		
 		// 데이터 갯수를 나타내기위해서 객체생성
 		DepartmentsDao departmentsDao = new DepartmentsDao();
