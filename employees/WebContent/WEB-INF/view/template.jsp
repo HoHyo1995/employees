@@ -31,8 +31,8 @@
 <hr>
 <div style="text-align: center;">
 	<a href="/employees/selectEmployees" class="btn btn-outline-secondary join">사원조회</a>
-	<a href="/employees/selectPosition" class="btn btn-outline-secondary join">직책조회</a>
-	<a href="/employees/selectDepartments" class="btn btn-outline-secondary join">부서조회</a>
+	<a href="/employees/selectPosition" class="btn btn-outline-secondary join">직책통계</a>
+	<a href="/employees/selectDepartments" class="btn btn-outline-secondary join">부서통계</a>
 	<a href="/employees/selectSalaries" class="btn btn-outline-secondary join">연봉통계</a>
 	<a href="/employees/logout" class="btn btn-outline-secondary join">로그아웃</a>
 </div>

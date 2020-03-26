@@ -3,14 +3,15 @@ package com.hyol.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.hyol.vo.Counting;
 
 import db.DBHelper;
 
 public class DeptEmpDao {
-	//생성자 생성
-	public DeptEmpDao() {
-		
-	}
+
 	// 총 행의 수를 구하는 메소드
 	public int getDeptEmpCount() {
 		int count = 0;

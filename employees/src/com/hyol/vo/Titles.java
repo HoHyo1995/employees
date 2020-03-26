@@ -5,6 +5,7 @@ public class Titles {
 	private String title;
 	private String from_date;
 	private String to_date;
+	private int empCount; // 직책별 사원 수 조회할때 담을 변수
 	public int getEmpNo() {
 		return empNo;
 	}
@@ -29,4 +30,11 @@ public class Titles {
 	public void setTo_date(String to_date) {
 		this.to_date = to_date;
 	}
+	public int getEmpCount() {
+		return empCount;
+	}
+	public void setEmpCount(int empCount) {
+		this.empCount = empCount;
+	}
+	
 }

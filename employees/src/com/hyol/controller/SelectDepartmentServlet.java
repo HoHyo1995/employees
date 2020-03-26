@@ -10,29 +10,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.hyol.model.TitlesDao;
-import com.hyol.vo.Titles;
+
+import com.hyol.model.DepartmentsDao;
+import com.hyol.vo.Counting;
 
 
-@WebServlet("/selectPosition")
-public class SelectPositionServlet extends HttpServlet {
-       private TitlesDao titlesDao;
+@WebServlet("/selectDepartments")
+public class SelectDepartmentServlet extends HttpServlet {
+	private DepartmentsDao departmentsDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("-----selectPositionServlet-----");
-		// 세션검사
+		// 세션 검사
 		HttpSession session = request.getSession();
 		if(session.getAttribute("seno") == null) {
 			response.sendRedirect(request.getContextPath()+"/login");
 			return;
 		}
 		
-		titlesDao = new TitlesDao();
-		List<Titles> list = titlesDao.gettitlesCountList();
-		System.out.println(list.toString());
-		
+		departmentsDao = new DepartmentsDao();
+		List<Counting> list = departmentsDao.getTotalEmloyees();
+		System.out.println(list);
 		
 		request.setAttribute("list", list);
-		request.getRequestDispatcher("/WEB-INF/view/positionView.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/departmentsView.jsp").forward(request, response);
 	}
-
 }

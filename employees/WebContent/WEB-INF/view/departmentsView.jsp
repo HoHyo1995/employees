@@ -14,39 +14,6 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-   google.charts.load('current', {'packages':['corechart']});
-   google.charts.setOnLoadCallback(drawChart);
-	// servlet에서 받아온 값 저장
-	var list = [['Task', 'Hours per Day']];
-	<c:forEach var="item" items="${list}">
-
-		var chartContents = [
-				"${item.title}"
-				, ${item.empCount}
-			];
-		list.push(chartContents);
-	</c:forEach>
-	console.log(list);
-	console.log(list.length);
-	
-	function drawChart() {
-		var data = google.visualization.arrayToDataTable(
-			list
-	        );
-
-     var options = {
-       title: '직책별 사원비율'
-     };
-     
-     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-     chart.draw(data, options);
-   }
- </script>
-  </head>
 <style>
 #title {
 	text-align: center;
@@ -60,7 +27,7 @@
 <body>
 <hr>
 <div id="titleBox">
-	<h2 id="title">샘플DB employees로 구현-직책통계</h2>
+	<h2 id="title">샘플DB employees로 구현-부서통계</h2>
 </div>
 <hr>
 <div style="text-align: center;">
@@ -71,20 +38,7 @@
 	<a href="/employees/logout" class="btn btn-outline-secondary join">로그아웃</a>
 </div>
 <hr>
- <div class="row">
-	 <div id="piechart" class="col-sm-8" style="width: 900px; height: 500px;"></div>
-	 <div class="col-sm-4">
-	 	<h3>직책별 사원 수</h3>
-	 	<table>
-	 		<c:forEach var="item" items="${list }">
-		 		<tr>
-		 			<td>${item.title}</td>
-		 			<td>${item.empCount}</td>
-		 		</tr>
-		 	</c:forEach>
-	 	</table>
-	 </div>
- </div>
+
 </body>
 <script>
 	$("#title").click(function(){
