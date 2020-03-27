@@ -3,6 +3,7 @@ package com.hyol.vo;
 public class Counting {
 	private String sort;
 	private int peoples;
+	
 	public String getSort() {
 		return sort;
 	}
